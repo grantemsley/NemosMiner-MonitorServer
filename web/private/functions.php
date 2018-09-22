@@ -128,6 +128,6 @@ function get_user_count() {
   $query = "SELECT COUNT(DISTINCT user) as users, COUNT(DISTINCT worker) as workers FROM stats";
   $stmt = $db->prepare($query);
   $result = $stmt->execute();
-  return json_encode($stmt->fetch(PDO::FETCH_ASSOC));
+  return $stmt->fetch(PDO::FETCH_ASSOC);
 }
   
