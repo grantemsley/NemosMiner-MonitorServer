@@ -1,9 +1,14 @@
 // fix bootstrap-table icons
 window.icons = {
-  refresh: 'fa-sync',
-  toggle: 'fa-id-card',
-  columns: 'fa-columns',
-  clear: 'fa-trash'
+  paginationSwitchDown: 'far fa-caret-square-down',
+  paginationSwitchUp: 'far fa-caret-square-up',
+  refresh: 'fas fa-sync',
+  toggleOff: 'fas fa-toggle-off',
+  toggleOn: 'fas fa-toggle-on',
+  toggle: 'fas fa-th-list',
+  detailOpen: 'fas fa-plus',
+  detailClose: 'fas fa-minus',
+  fullscreen: 'fas fa-expand-arrows-alt'
 };
 
 function timeSince(unixtimestamp) {
