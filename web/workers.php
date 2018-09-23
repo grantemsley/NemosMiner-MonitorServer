@@ -53,8 +53,6 @@ function formatWorkers(data) {
     if( ((new Date() - new Date(item.lastseen*1000)) / 1000) > 10*60) {
       item.status = "Offline";
     }
-
-    item.a = "a"
   });
   return data;
 }
@@ -69,7 +67,7 @@ function detailFormatter(index, row) {
   html.push("<div class='pl-5 pr-5'>");
   html.push("<h5>Running Miners</h5>");
   html.push("<table class='table'>");
-  html.push("<thead><tr><th>Name</th><th>Algorithm</th><th>Pool</th><th>Type</th><th>Profit</th><th>Current Speed</th><th>Benchmarked Speed</th><th>Path</th></tr></thead>");
+  html.push("<thead><tr><th>Name</th><th>Algorithm</th><th>Pool</th><th>Type</th><th>Estimated Profit</th><th>Current Speed</th><th>Benchmarked Speed</th><th>Path</th></tr></thead>");
   $.each(row.data, function (key, value) {
     console.log(value);
     html.push('<tr>');
@@ -77,7 +75,7 @@ function detailFormatter(index, row) {
     html.push('<td>'+value.Algorithm+'</td>');
     html.push('<td>'+value.Pool+'</td>');
     html.push('<td>'+value.Type+'</td>');
-    html.push('<td>'+value.Profit+'</td>');
+    html.push('<td>'+formatBTC(value.Profit)+'</td>');
     html.push('<td>'+value.CurrentSpeed+'</td>');
     html.push('<td>'+value.EstimatedSpeed+'</td>');
     html.push('<td>'+value.Path+'</td>');

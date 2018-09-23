@@ -1,11 +1,13 @@
 <?php include 'includes/head.php';?>
+<header class="text-white smallheader">
+  <div class="container text-center">
+    <h2>Privacy</h2>
+  </div>
+</header>
 <div class="container-fluid">
-  <div class="row m-2">
-    <div class="col-md-12 text-center">
-      <h2 class="pt-4">Privacy</h2>
-    </div>
+  <div class="row">
     <div class="col-md-12">
-      <h3>What we store</h3>
+      <h3 class="pt-3">What we store</h3>
       <p>Information reported by the NemosMiner software is stored on this server so you can view the status of your mining machines. This information includes:</p>
       <ul>
         <li>A randomly generated user id that was assigned to you</li>
@@ -24,11 +26,11 @@
       <p>Though we do not intentionally capture it, server logs may include your IP address and browser information.</p>
     </div>
     <div class="col-md-12">
-      <h3>Who can access it?</h3>
+      <h3 class="pt-3">Who can access it?</h3>
       <p>We don't use any sort of accounts or authentication - anyone who knows or guesses your user id can view the status of your workers. User ids are randomly generated <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">UUIDs</a>.
     </div>
     <div class="col-md-12">
-      <h3>How we use your data</h3>
+      <h3 class="pt-3">How we use your data</h3>
       <ul>
         <li>To display your worker status to you on this website</li>
         <li>To display your worker statusin the NemosMiner software</li>
@@ -36,7 +38,7 @@
       </ul>
     </div>
     <div class="col-md-12">
-      <h3>How to remove your data</h3>
+      <h3 class="pt-3">How to remove your data</h3>
       <p>Data for each miner is removed automatically 3 days after the last time it reported to the server</p>
     </div> 
   </div>

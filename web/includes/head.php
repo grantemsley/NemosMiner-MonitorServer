@@ -25,6 +25,8 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="https://github.com/nemosminer/NemosMiner">Github</a></li>
+            <li class="nav-item"><a class="nav-link" href="setup.php">Instructions</a></li>
+            <li class="nav-item"><a class="nav-link" href="faq.php">FAQ</a></li>
             <li class="nav-item"><a class="nav-link" href="privacy.php">Privacy</a></li>
           </ul>
         </div>
