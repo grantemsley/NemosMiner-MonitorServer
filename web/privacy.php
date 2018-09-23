@@ -1,4 +1,4 @@
-<?php include 'includes/head.html';?>
+<?php include 'includes/head.php';?>
 <div class="container-fluid">
   <div class="row m-2">
     <div class="col-md-12 text-center">
@@ -41,4 +41,4 @@
     </div> 
   </div>
 </div>
-<?php include 'includes/foot.html';?>
+<?php include 'includes/foot.php';?>

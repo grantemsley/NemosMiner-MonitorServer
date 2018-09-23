@@ -1,8 +1,27 @@
-header {
+header.largeheader {
   padding: 75px 0;
+}
+
+header.smallheader {
+  padding: 25px 0;
+}
+
+header {
   background-color: #4FCE4B;
 }
 
 section {
   padding: 50px 0;
+}
+
+.Running {
+  background-color: rgb(127,191,144);
+}
+
+.Offline {
+  background-color: rgb(213,142,176);
+}
+
+.Paused {
+  background-color: rgb(247,252,168);
 }
