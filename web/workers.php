@@ -58,7 +58,6 @@ function formatWorkers(data) {
 }
 
 function colorStatus(row,index) {
-  console.log(row);
   return {classes: row.status};
 }
 
@@ -69,7 +68,6 @@ function detailFormatter(index, row) {
   html.push("<table class='table'>");
   html.push("<thead><tr><th>Name</th><th>Algorithm</th><th>Pool</th><th>Type</th><th>Estimated Profit</th><th>Current Speed</th><th>Benchmarked Speed</th><th>Path</th></tr></thead>");
   $.each(row.data, function (key, value) {
-    console.log(value);
     html.push('<tr>');
     html.push('<td>'+value.Name+'</td>');
     html.push('<td>'+value.Algorithm+'</td>');
