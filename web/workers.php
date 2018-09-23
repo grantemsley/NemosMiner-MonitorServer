@@ -26,11 +26,12 @@ include 'includes/head.php';
         data-detail-formatter="detailFormatter"
         data-icons="icons"
         data-icons-prefix="fa"
+        data-row-style="colorStatus"
       >
         <thead>
           <tr>
             <th data-field="worker" data-sortable="true">Worker Name</th>
-            <th data-field="status" data-sortable="true" data-cell-style="colorStatus">Status</th>
+            <th data-field="status" data-sortable="true">Status</th>
             <th data-field="flastseen" data-sortable="true">Last Seen</th>
             <th data-field="version" data-sortable="true">Version</th>
             <th data-field="fprofit" data-sortable="true">Estimated Profit</th>
@@ -45,8 +46,6 @@ include 'includes/head.php';
 function formatWorkers(data) {
   // This function can alter the returned data before building the table to formatting it better
   $.each(data, function(index, item) {
-    console.log(data);
-    console.log(item);
     item.flastseen = timeSince(item.lastseen);
     item.fprofit = formatBTC(item.profit);
 
@@ -60,15 +59,31 @@ function formatWorkers(data) {
   return data;
 }
 
-function colorStatus(value,row,index,field) {
-  return {classes: value};
+function colorStatus(row,index) {
+  console.log(row);
+  return {classes: row.status};
 }
 
 function detailFormatter(index, row) {
   var html = [];
-  $.each(row, function (key, value) {
-    html.push('<p class="mb-0"><b>' + key + ':</b> ' + JSON.stringify(value) + '</p>');
+  html.push("<div class='pl-5 pr-5'>");
+  html.push("<h5>Running Miners</h5>");
+  html.push("<table class='table'>");
+  html.push("<thead><tr><th>Name</th><th>Algorithm</th><th>Pool</th><th>Type</th><th>Profit</th><th>Current Speed</th><th>Benchmarked Speed</th><th>Path</th></tr></thead>");
+  $.each(row.data, function (key, value) {
+    console.log(value);
+    html.push('<tr>');
+    html.push('<td>'+value.Name+'</td>');
+    html.push('<td>'+value.Algorithm+'</td>');
+    html.push('<td>'+value.Pool+'</td>');
+    html.push('<td>'+value.Type+'</td>');
+    html.push('<td>'+value.Profit+'</td>');
+    html.push('<td>'+value.CurrentSpeed+'</td>');
+    html.push('<td>'+value.EstimatedSpeed+'</td>');
+    html.push('<td>'+value.Path+'</td>');
+    html.push('</tr>');
   });
+  html.push("</table>");
   return html.join('');
 }
 </script>
