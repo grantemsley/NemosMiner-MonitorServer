@@ -87,8 +87,8 @@ function detailFormatter(index, row) {
     html.push('<td>'+value.Pool+'</td>');
     html.push('<td>'+value.Type+'</td>');
     html.push('<td>'+formatBTC(value.Profit)+'</td>');
-    html.push('<td>'+value.CurrentSpeed+'</td>');
-    html.push('<td>'+value.EstimatedSpeed+'</td>');
+    html.push('<td>'+formatHashRate(value.CurrentSpeed)+'</td>');
+    html.push('<td>'+formatHashRate(value.EstimatedSpeed)+'</td>');
     html.push('<td>'+value.Path+'</td>');
     html.push('</tr>');
   });
