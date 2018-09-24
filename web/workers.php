@@ -38,6 +38,7 @@ include 'includes/head.php';
           </tr>
         </thead>
       </table>
+      <p>Last refreshed: <span id="lastrefreshed"></span></p>
     </div>
   </div>
 </div>
@@ -52,15 +53,20 @@ setInterval(refreshTable, 60000);
 
 function formatWorkers(data) {
   // This function can alter the returned data before building the table to formatting it better
+  now = new Date();
   $.each(data, function(index, item) {
     item.flastseen = timeSince(item.lastseen);
     item.fprofit = formatBTC(item.profit);
 
     // If worker hasn't reported in 10 minutes, mark as offline
-    if( ((new Date() - new Date(item.lastseen*1000)) / 1000) > 10*60) {
+    if( ((now - new Date(item.lastseen*1000)) / 1000) > 10*60) {
       item.status = "Offline";
     }
   });
+
+  // Also set the last refreshed date
+  $('#lastrefreshed').text(now.toLocaleDateString()+' '+now.toLocaleTimeString());
+
   return data;
 }
 
