@@ -43,6 +43,13 @@ include 'includes/head.php';
 </div>
 
 <script type="text/javascript">
+function refreshTable() {
+  $('#workers').bootstrapTable('refresh', {silent: true});
+}
+
+setInterval(refreshTable, 60000);
+
+
 function formatWorkers(data) {
   // This function can alter the returned data before building the table to formatting it better
   $.each(data, function(index, item) {
